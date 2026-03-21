@@ -24,3 +24,33 @@ class Input extends StatelessWidget {
     );
   }
 }
+
+class NavItem extends StatelessWidget {
+  final String text;
+
+  const NavItem({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'PTSans',
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFFFFFFF),
+            decoration: TextDecoration.none,
+          ),
+        ),
+        Container(
+          height: 59,
+          width: 1,
+          color: Color(0xFFFFFFFF),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+        ),
+      ],
+    );
+  }
+}
