@@ -14,12 +14,29 @@ class _LayoutWidgetState extends State<LayoutWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          const Header(),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(children: [widget.page, const Footer()]),
+          Column(
+            children: [
+              const Header(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(children: [widget.page, const Footer()]),
+                ),
+              ),
+            ],
+          ),
+          Positioned(
+            bottom: 100,
+            right: 45,
+            child: Container(
+              width: 101,
+              height: 101,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(161, 85, 87, 104),
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset('assets/images/arrow.png', height: 43),
             ),
           ),
         ],

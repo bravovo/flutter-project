@@ -66,9 +66,19 @@ flutter:
   assets:
     - assets/images/globe.png
     - assets/images/logo.png
+    - assets/images/arrow.png
+    - assets/images/polygon-down.png
+    - assets/images/star.png
+
     - assets/images/hero-main.jpg
     - assets/images/hero-second.jpg
     - assets/images/hero-third.png
+
+    - assets/images/book-bakota.png
+    - assets/images/book-carpaty.png
+    - assets/images/book-kyiv.png
+    - assets/images/book-odesa.png
+
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
