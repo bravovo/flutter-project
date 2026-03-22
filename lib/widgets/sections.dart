@@ -31,45 +31,43 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    bool isMobile = screenWidth < 900;
+
     return Container(
       width: double.infinity,
       height: 90,
-      color: Color(0xFF202846),
-      padding: EdgeInsets.fromLTRB(138, 10, 63, 10),
+      color: const Color(0xFF202846),
+      padding: EdgeInsets.symmetric(horizontal: isMobile ? 20 : 138),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/images/logo.png', width: 178, height: 70),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+          Image.asset('assets/images/logo.png', width: 150, height: 60),
+          if (isMobile)
+            IconButton(
+              icon: const Icon(Icons.menu, color: Colors.white, size: 30),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            )
+          else
+            Row(
               children: [
-                NavItem(text: "Головна"),
-                NavItem(text: "Про нас"),
-                NavItem(text: "Забронювати"),
-                NavItem(text: "Контакти"),
-                NavItem(text: "Особистий кабінет"),
-                Row(
-                  children: [
-                    Image.asset(
-                      'assets/images/globe.png',
-                      width: 75,
-                      height: 75,
-                    ),
-                    const Text(
-                      "UA",
-                      style: TextStyle(
-                        fontFamily: 'PTSans',
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFFFFFFFF),
-                        decoration: TextDecoration.none,
-                      ),
-                    ),
-                  ],
+                const NavItem(text: "Головна"),
+                const NavItem(text: "Про нас"),
+                const NavItem(text: "Забронювати"),
+                const NavItem(text: "Контакти"),
+                const NavItem(text: "Особистий кабінет"),
+                const SizedBox(width: 20),
+                Image.asset('assets/images/globe.png', width: 30, height: 30),
+                const Text(
+                  " UA",
+                  style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
-          ),
         ],
       ),
     );

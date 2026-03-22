@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/sections.dart';
+import './sections.dart';
 
 class LayoutWidget extends StatefulWidget {
   final Widget page;
-
   const LayoutWidget({super.key, required this.page});
 
   @override
@@ -13,7 +12,43 @@ class LayoutWidget extends StatefulWidget {
 class _LayoutWidgetState extends State<LayoutWidget> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    bool isMobile = screenWidth < 900;
+
     return Scaffold(
+      drawer: isMobile
+          ? Drawer(
+              backgroundColor: const Color(0xFF202846),
+              child: ListView(
+                children: const [
+                  ListTile(
+                    title: Text(
+                      "Головна",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      "Про нас",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      "Забронювати",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      "Контакти",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          : null,
       body: Stack(
         children: [
           Column(
@@ -27,16 +62,21 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             ],
           ),
           Positioned(
-            bottom: 100,
-            right: 45,
-            child: Container(
-              width: 101,
-              height: 101,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(161, 85, 87, 104),
-                shape: BoxShape.circle,
+            bottom: isMobile ? 30 : 100,
+            right: isMobile ? 20 : 45,
+            child: GestureDetector(
+              onTap: () => print("Натиснуто"),
+              child: Container(
+                width: 60,
+                height: 60,
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(161, 85, 87, 104),
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Image.asset('assets/images/arrow.png', height: 25),
+                ),
               ),
-              child: Image.asset('assets/images/arrow.png', height: 43),
             ),
           ),
         ],
