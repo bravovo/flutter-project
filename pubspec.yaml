@@ -69,6 +69,7 @@ flutter:
     - assets/images/arrow.png
     - assets/images/polygon-down.png
     - assets/images/star.png
+    - assets/images/map.png
 
     - assets/images/hero-main.jpg
     - assets/images/hero-second.jpg
@@ -78,6 +79,8 @@ flutter:
     - assets/images/book-carpaty.png
     - assets/images/book-kyiv.png
     - assets/images/book-odesa.png
+
+    - assets/images/about-hero.png
 
     # - images/a_dot_ham.jpeg
 

@@ -54,3 +54,31 @@ class NavItem extends StatelessWidget {
     );
   }
 }
+
+class PageBanner extends StatelessWidget {
+  final String text;
+  final bool isMobile;
+
+  const PageBanner({super.key, required this.text, required this.isMobile});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: isMobile ? 100 : 140,
+      color: const Color(0xFFC6C6DC),
+      padding: EdgeInsets.only(left: isMobile ? 0 : 227),
+      alignment: isMobile ? Alignment.center : Alignment.centerLeft,
+      child: Text(
+        text,
+        style: TextStyle(
+          fontFamily: 'PTSans',
+          fontSize: isMobile ? 28 : 48,
+          fontStyle: FontStyle.italic,
+          color: const Color(0xFF202846),
+          decoration: TextDecoration.none,
+        ),
+      ),
+    );
+  }
+}

@@ -32,7 +32,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    bool isMobile = screenWidth < 900;
+    bool isMobile = screenWidth < 1235;
 
     return Container(
       width: double.infinity,

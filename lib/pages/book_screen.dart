@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/ui.dart';
 import 'package:flutter_application_1/widgets/widgets.dart';
 
 class BookScreen extends StatefulWidget {
@@ -22,23 +23,7 @@ class _BookScreenState extends State<BookScreen> {
           child: Column(
             spacing: isMobile ? 30 : 56,
             children: [
-              Container(
-                width: double.infinity,
-                height: isMobile ? 100 : 140,
-                color: const Color(0xFFC6C6DC),
-                padding: EdgeInsets.only(left: isMobile ? 20 : 227),
-                alignment: isMobile ? Alignment.center : Alignment.centerLeft,
-                child: Text(
-                  "Забронювати будиночок",
-                  style: TextStyle(
-                    fontFamily: 'PTSans',
-                    fontSize: isMobile ? 28 : 48,
-                    fontStyle: FontStyle.italic,
-                    color: const Color(0xFF202846),
-                    decoration: TextDecoration.none,
-                  ),
-                ),
-              ),
+              PageBanner(text: "Забронювати будиночок", isMobile: isMobile),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: sidePadding),
                 child: Container(

@@ -112,3 +112,49 @@ class PlaceCard extends StatelessWidget {
     );
   }
 }
+
+class ContactWidget extends StatelessWidget {
+  final String title;
+  final String content;
+  final bool isMobile;
+
+  const ContactWidget({
+    super.key,
+    required this.title,
+    required this.content,
+    required this.isMobile,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontFamily: 'PTSans',
+            fontSize: isMobile ? 24 : 32,
+            color: Color(0xFF000000),
+            decoration: TextDecoration.none,
+          ),
+        ),
+        const SizedBox(height: 11),
+        Container(
+          decoration: const BoxDecoration(
+            border: Border(top: BorderSide(color: Color(0xFF202846), width: 3)),
+          ),
+          child: Text(
+            content,
+            style: TextStyle(
+              fontFamily: 'PTSans',
+              fontSize: isMobile ? 22 : 30,
+              color: Color(0xFF000000),
+              decoration: TextDecoration.none,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

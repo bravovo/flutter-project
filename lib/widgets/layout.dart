@@ -13,7 +13,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    bool isMobile = screenWidth < 900;
+    bool isMobile = screenWidth < 1235;
 
     return Scaffold(
       drawer: isMobile
