@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/sections.dart';
 import 'package:flutter_application_1/widgets/ui.dart';
-import 'package:flutter_application_1/widgets/widgets.dart';
 
 class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
