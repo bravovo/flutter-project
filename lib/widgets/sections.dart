@@ -51,11 +51,11 @@ class Header extends StatelessWidget {
           else
             Row(
               children: [
-                const NavItem(text: "Головна"),
-                const NavItem(text: "Про нас"),
-                const NavItem(text: "Забронювати"),
-                const NavItem(text: "Контакти"),
-                const NavItem(text: "Особистий кабінет"),
+                const NavItem(text: "Головна", route: '/'),
+                const NavItem(text: "Про нас", route: "/about"),
+                const NavItem(text: "Забронювати", route: "/book"),
+                const NavItem(text: "Контакти", route: "/contacts"),
+                const NavItem(text: "Особистий кабінет", route: "/profile"),
                 const SizedBox(width: 20),
                 Image.asset('assets/images/globe.png', width: 30, height: 30),
                 const Text(

@@ -20,30 +20,34 @@ class _LayoutWidgetState extends State<LayoutWidget> {
           ? Drawer(
               backgroundColor: const Color(0xFF202846),
               child: ListView(
-                children: const [
+                children: [
                   ListTile(
                     title: Text(
                       "Головна",
                       style: TextStyle(color: Colors.white),
                     ),
+                    onTap: () => Navigator.pushNamed(context, '/'),
                   ),
                   ListTile(
                     title: Text(
                       "Про нас",
                       style: TextStyle(color: Colors.white),
                     ),
+                    onTap: () => Navigator.pushNamed(context, '/about'),
                   ),
                   ListTile(
                     title: Text(
                       "Забронювати",
                       style: TextStyle(color: Colors.white),
                     ),
+                    onTap: () => Navigator.pushNamed(context, '/book'),
                   ),
                   ListTile(
                     title: Text(
                       "Контакти",
                       style: TextStyle(color: Colors.white),
                     ),
+                    onTap: () => Navigator.pushNamed(context, '/contacts'),
                   ),
                 ],
               ),

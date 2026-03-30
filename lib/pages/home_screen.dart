@@ -107,7 +107,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(fontSize: isMobile ? 16 : 24),
                               ),
                               label: const Icon(Icons.arrow_forward, size: 20),
-                              onPressed: () {},
+                              onPressed: () =>
+                                  Navigator.pushNamed(context, '/book-details'),
                             ),
                           ),
                         ],

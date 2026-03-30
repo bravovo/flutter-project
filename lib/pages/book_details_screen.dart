@@ -411,7 +411,9 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: const Icon(Icons.arrow_back, size: 18),
                       label: const Text(
                         "Назад",

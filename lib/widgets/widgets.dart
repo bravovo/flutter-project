@@ -90,7 +90,7 @@ class PlaceCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, '/book-details'),
                 child: Text(
                   'Детальніше',
                   style: TextStyle(fontSize: isMobile ? 18 : 24),

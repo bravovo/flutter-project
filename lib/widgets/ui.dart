@@ -27,22 +27,26 @@ class Input extends StatelessWidget {
 
 class NavItem extends StatelessWidget {
   final String text;
+  final String route;
 
-  const NavItem({super.key, required this.text});
+  const NavItem({super.key, required this.text, required this.route});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'PTSans',
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFFFFFFFF),
-            decoration: TextDecoration.none,
+        TextButton(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'PTSans',
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFFFFFFF),
+              decoration: TextDecoration.none,
+            ),
           ),
+          onPressed: () => Navigator.pushNamed(context, route),
         ),
         Container(
           height: 59,
@@ -185,12 +189,12 @@ class _DateTimePickerState extends State<DateTimePicker> {
         const SizedBox(height: 15),
         FilledButton(
           style: OutlinedButton.styleFrom(
-            backgroundColor: const Color(0xFF202846)
+            backgroundColor: const Color(0xFF202846),
           ),
           onPressed: () async {
             final DateTime? pickedDate = await showDatePicker(
               context: context,
-              initialDate: selectedDate ?? DateTime.now(), 
+              initialDate: selectedDate ?? DateTime.now(),
               firstDate: DateTime(2026),
               lastDate: DateTime(2027),
               currentDate: DateTime.now(),
@@ -202,9 +206,11 @@ class _DateTimePickerState extends State<DateTimePicker> {
               });
             }
           },
-          child: Text(widget.title, style: TextStyle(fontFamily: "PTSans", fontWeight: FontWeight.bold)),
+          child: Text(
+            widget.title,
+            style: TextStyle(fontFamily: "PTSans", fontWeight: FontWeight.bold),
+          ),
         ),
-
       ],
     );
   }
