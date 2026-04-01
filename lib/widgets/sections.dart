@@ -51,7 +51,7 @@ class Header extends StatelessWidget {
           else
             Row(
               children: [
-                const NavItem(text: "Головна", route: '/'),
+                const NavItem(text: "Головна", route: '/home'),
                 const NavItem(text: "Про нас", route: "/about"),
                 const NavItem(text: "Забронювати", route: "/book"),
                 const NavItem(text: "Контакти", route: "/contacts"),

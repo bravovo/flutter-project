@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       initialRoute: "/",
       routes: {
-        '/': (context) => const LayoutWidget(page: HomeScreen()),
+        '/': (context) => const LoadingScreen(),
+        '/home': (context) => const LayoutWidget(page: HomeScreen()),
         "/about": (context) => const LayoutWidget(page: AboutScreen()),
         '/book': (context) => const LayoutWidget(page: BookScreen()),
         '/contacts': (context) => const LayoutWidget(page: ContactsScreen()),

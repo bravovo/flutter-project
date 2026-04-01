@@ -26,7 +26,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
                       "Головна",
                       style: TextStyle(color: Colors.white),
                     ),
-                    onTap: () => Navigator.pushNamed(context, '/'),
+                    onTap: () => Navigator.pushNamed(context, '/home'),
                   ),
                   ListTile(
                     title: Text(
